@@ -66,12 +66,45 @@ func calculatePoint(input string) int {
 	return oneRoundPoint
 }
 
+func calculateNewPoint(input string) int {
+
+	// A: opponent rock; B: opponent paper; C: opponent scissors
+	// X: need to lose; Y: need to draw; Z: need to win
+
+	shapePoints := map[string]int{
+		"rock":     1,
+		"paper":    2,
+		"scissors": 3,
+	}
+
+	winPoints := map[string]int{
+		"Z": 6,
+		"Y": 3,
+		"X": 0,
+	}
+	inputSlice := strings.Split(input, " ")
+
+	var oneRoundPoint int = 0
+
+	oneRoundPoint += winPoints[inputSlice[1]]
+
+	if (inputSlice[0] == "A" && inputSlice[1] == "Y") || (inputSlice[0] == "B" && inputSlice[1] == "X") || (inputSlice[0] == "C" && inputSlice[1] == "Z") {
+		oneRoundPoint += shapePoints["rock"]
+	} else if (inputSlice[0] == "C" && inputSlice[1] == "Y") || (inputSlice[0] == "A" && inputSlice[1] == "X") || (inputSlice[0] == "B" && inputSlice[1] == "Z") {
+		oneRoundPoint += shapePoints["scissors"]
+	} else {
+		oneRoundPoint += shapePoints["paper"]
+	}
+
+	return oneRoundPoint
+}
+
 func main() {
 	stratSlices := getStrategy()
 	fmt.Printf("The total number of lines is: %d \n", len(stratSlices))
 	totalPoint := 0
 	for i := 0; i < len(stratSlices); i++ {
-		totalPoint += calculatePoint(stratSlices[i])
+		totalPoint += calculateNewPoint(stratSlices[i])
 	}
 	fmt.Printf("The total point is %d \n", totalPoint)
 }
