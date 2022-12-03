@@ -1,5 +1,5 @@
-# advent-of-code-2022
-Solutions for Advent of Code 2022:  https://adventofcode.com/2022  
+# Advent of Code 2022
+This repo is my attempts to solve the problems from Advent of Code 2022:  https://adventofcode.com/2022  
 
 Advent of Code, created by [Eric Wastl](http://was.tl/) is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language.  
 
@@ -21,3 +21,11 @@ Solution:
 https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-02/rock-paper-scissors  
 Language:  
 [Go](https://go.dev/)
+
+## Day 03 : Rucksack Reorganization 
+Problem:  
+https://adventofcode.com/2022/day/3  
+Solution:  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-03/Rucksack  
+Language:  
+[Ruby](https://www.ruby-lang.org/en/)  
