@@ -29,3 +29,11 @@ Solution:
 https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-03/Rucksack  
 Language:  
 [Ruby](https://www.ruby-lang.org/en/)  
+
+## Day 04 : Camp Cleanup
+Problem:  
+https://adventofcode.com/2022/day/4  
+Solution:  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-04/camp-cleanup  
+Language:  
+[TypeScript](https://www.typescriptlang.org/)   
