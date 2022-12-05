@@ -37,3 +37,11 @@ Solution:
 https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-04/camp-cleanup  
 Language:  
 [TypeScript](https://www.typescriptlang.org/)   
+
+## Day 05 : Supply Stacks
+Problem:  
+https://adventofcode.com/2022/day/5  
+Solution:  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-05/supply-stacks  
+Language:  
+[Python](https://www.python.org/)
