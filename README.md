@@ -45,3 +45,11 @@ Solution:
 https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-05/supply-stacks  
 Language:  
 [Python](https://www.python.org/)
+
+## Day 06 : Tuning Trouble
+Problem:  
+https://adventofcode.com/2022/day/6  
+Solution:  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-06/tuning-trouble  
+Language:  
+[Ruby](https://www.ruby-lang.org/en/)  
