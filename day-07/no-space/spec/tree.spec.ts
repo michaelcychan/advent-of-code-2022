@@ -98,8 +98,5 @@ describe('Tree', () => {
       expect(actualInnderDir).toBe(expectedInnerDir)
       expect(actualRoot).toBe(expectedRoot)
     })
-
-
-    
   })
 })
