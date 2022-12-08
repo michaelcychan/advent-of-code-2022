@@ -1,15 +1,40 @@
+import {getDirLayer} from './getDirLayer'
 
 export class Tree {
-  tree: {};
   pwd: string;
+  tree: Map<string, number>;
 
   constructor(){
-    this.tree = {}
+    this.tree = new Map<string, number>()
     this.pwd = '/'
   }
 
   getPwd(){
     return this.pwd
+  }
+
+  getStorage(directory: string):number {
+    const storage : number | undefined = this.tree.get(directory)
+    if (storage !== undefined) {
+      return storage
+    } else {
+      return 0
+    }
+  }
+
+  addStorage(fileStorage: string) {
+    const [storageStr, fileName] = fileStorage.split(' ')
+    const storage = Number(storageStr)
+    const dirArray = getDirLayer(this.pwd)
+    for (let i = 0; i < dirArray.length; ++i) {
+      const currentStorage : number | undefined = this.tree.get(dirArray[i])
+      if (currentStorage !== undefined) {
+        this.tree.set(dirArray[i], currentStorage + storage)
+      } else {
+        this.tree.set(dirArray[i], storage)
+      }
+    }
+    console.log(this.tree)
   }
 
   buildTree(files:string) {
@@ -34,7 +59,5 @@ export class Tree {
       pwdArray.push(command)
       this.pwd = pwdArray.join('/')
     }
-
   }
-
 }

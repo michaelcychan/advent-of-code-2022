@@ -50,8 +50,56 @@ describe('Tree', () => {
       expect(tree.getPwd()).toBe(expected)
     })
   })
-  it.skip('does something', () => {
-    const tree = new Tree()
+  describe('getStorage', () => {
+    it ('initialises with 0 storage if nothing is saved', () => {
+      const tree = new Tree()
+      const expected = 0
 
+      const actual = tree.getStorage('/')
+      expect(actual).toBe(expected)
+    })
+    it('saves storage to current dictory', () => {
+      const tree = new Tree()
+      tree.addStorage('14848514 b.txt')
+      const expected = 14848514
+
+      const actual = tree.getStorage('/')
+      expect(actual).toBe(expected)
+    })
+    it('saves multiple storage to current dictory', () => {
+      const tree = new Tree()
+      tree.addStorage('4060174 j')
+      tree.addStorage('8033020 d.log')
+      tree.addStorage('5626152 d.ext')
+      tree.addStorage('7214296 k')
+      const expected = 24933642
+
+      const actual = tree.getStorage('/')
+      expect(actual).toBe(expected)
+    })
+
+    it('saves inner directory storage to outside directory too', () => {
+      const tree = new Tree()
+      tree.addStorage('1 a.txt')
+
+      tree.cd('innerDir')
+      debugger;
+      tree.addStorage('4060174 j')
+      debugger;
+      tree.addStorage('8033020 d.log')
+      tree.addStorage('5626152 d.ext')
+      tree.addStorage('7214296 k')
+
+      const expectedInnerDir = 24933642
+      const expectedRoot = 24933643
+
+      const actualInnderDir = tree.getStorage('/innerDir')
+      const actualRoot = tree.getStorage('/')
+      expect(actualInnderDir).toBe(expectedInnerDir)
+      expect(actualRoot).toBe(expectedRoot)
+    })
+
+
+    
   })
 })
