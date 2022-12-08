@@ -53,3 +53,20 @@ Solution:
 https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-06/tuning-trouble  
 Language:  
 [Ruby](https://www.ruby-lang.org/en/)  
+
+## Day 07 : No Space Left On Device
+Problem:  
+https://adventofcode.com/2022/day/7  
+Solution:  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-07/no-space  
+Language:  
+[TypeScript](https://www.typescriptlang.org/)
+
+
+## Day 08 : Treetop Tree House
+Problem:  
+https://adventofcode.com/2022/day/8  
+Solution:  
+Not yet solved.  
+Language:  
+[Unknown]()  
