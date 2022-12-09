@@ -88,10 +88,61 @@ func isVisibleInside(treeConfig [][]int, row int, column int) bool {
 	return visible
 }
 
+func findScenicScore(treeConfig [][]int, row int, column int) int {
+	northScore := 0
+	southScore := 0
+	westScore := 0
+	eastScore := 0
+
+	selfHeight := treeConfig[row][column]
+
+	// check north
+	for y := row - 1; y >= 0; y-- {
+		if treeConfig[y][column] >= selfHeight {
+			northScore += 1
+			break
+		} else {
+			northScore += 1
+		}
+	}
+
+	// check south
+	for y := row + 1; y < len(treeConfig); y++ {
+		if treeConfig[y][column] >= selfHeight {
+			southScore += 1
+			break
+		} else {
+			southScore += 1
+		}
+	}
+
+	// check west
+	for x := column - 1; x >= 0; x-- {
+		if treeConfig[row][x] >= selfHeight {
+			westScore += 1
+			break
+		} else {
+			westScore += 1
+		}
+	}
+
+	// check east
+	for x := column + 1; x < len(treeConfig[row]); x++ {
+		if treeConfig[row][x] >= selfHeight {
+			eastScore += 1
+			break
+		} else {
+			eastScore += 1
+		}
+	}
+	return northScore * southScore * westScore * eastScore
+}
+
 func main() {
 	treeConfig := getTrees()
 
 	// example test case, total visible: 21
+	// hight scenic score: 8
 	// treeConfig := [][]int{{3, 0, 3, 7, 3}, {2, 5, 5, 1, 2}, {6, 5, 3, 3, 2}, {3, 3, 5, 4, 9}, {3, 5, 3, 9, 0}}
 
 	totalRows := len(treeConfig)
@@ -101,10 +152,18 @@ func main() {
 
 	innerVisible := 0
 
+	highestScenicScore := 0
+
 	for row := 1; row < len(treeConfig)-1; row++ {
 		for column := 1; column < len(treeConfig[row])-1; column++ {
 			if isVisibleInside(treeConfig, row, column) {
 				innerVisible += 1
+			}
+			localScore := findScenicScore(treeConfig, row, column)
+			if localScore > highestScenicScore {
+				fmt.Printf("Local Score: %d \n", localScore)
+				fmt.Printf("Location: Row: %d, Column: %d \n", row, column)
+				highestScenicScore = localScore
 			}
 		}
 	}
@@ -112,5 +171,7 @@ func main() {
 	fmt.Printf("Outer Visible: %d \n", outerVisible)
 	fmt.Printf("Inner Visible: %d \n", innerVisible)
 	fmt.Printf("Total Visible: %d \n", outerVisible+innerVisible)
+
+	fmt.Printf("Highest Scenic Score: %d \n", highestScenicScore)
 
 }
