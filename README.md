@@ -67,6 +67,6 @@ Language:
 Problem:  
 https://adventofcode.com/2022/day/8  
 Solution:  
-Not yet solved.  
+https://github.com/michaelcychan/advent-of-code-2022/tree/main/day-08/treetop-tree-house    
 Language:  
-[Unknown]()  
+[Go](https://go.dev/)  
